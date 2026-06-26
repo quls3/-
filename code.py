@@ -45,7 +45,6 @@ def make_check_hash(key):
 
 
 def make_stream(key, nonce, size):
-    # Это учебное преобразование текста. В реальных менеджерах паролей лучше использовать готовые библиотеки.
     result = bytearray()
     counter = 0
     while len(result) < size:
@@ -163,7 +162,7 @@ class PasswordManagerApp:
         self.selected_id = None
 
         self.root.title("Менеджер паролей")
-        self.root.geometry("820x520")
+        self.root.geometry("820x720")
         self.root.resizable(False, False)
 
         self.load_items()
@@ -278,7 +277,7 @@ class PasswordManagerApp:
 
         ttk.Button(form, text="Сгенерировать пароль", command=self.make_password).pack(fill="x", pady=2)
         ttk.Button(form, text="Копировать пароль", command=self.copy_password).pack(fill="x", pady=2)
-        ttk.Button(form, text="Добавить", command=self.add_item).pack(fill="x", pady=(10, 2))
+        ttk.Button(form, text="Добавить", command=self.add_item).pack(fill="x", pady=2)
         ttk.Button(form, text="Сохранить изменения", command=self.save_item).pack(fill="x", pady=2)
         ttk.Button(form, text="Удалить", command=self.delete_item).pack(fill="x", pady=2)
         ttk.Button(form, text="Очистить поля", command=self.clear_form).pack(fill="x", pady=2)
